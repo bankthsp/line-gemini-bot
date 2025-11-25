@@ -32,7 +32,7 @@ app.post("/webhook", async (req, res) => {
         console.log(`User sent: ${userMessage}`);
 
         // 1. ส่งข้อความไปถาม Gemini
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         const result = await model.generateContent(userMessage);
         const response = await result.response;
         const textReply = response.text();
